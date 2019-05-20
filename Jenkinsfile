@@ -17,8 +17,6 @@ pipeline {
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
-                        echo "$USERNAME"
-                        echo "$USERPASS"
                         publishers: [
                             sshPublisherDesc(
                                 configName: 'stagingserver',
