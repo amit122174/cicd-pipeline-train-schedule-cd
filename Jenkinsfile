@@ -14,6 +14,9 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
+                    
+                    echo "$USERNAME"
+                    echo "$USERPASS"
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
